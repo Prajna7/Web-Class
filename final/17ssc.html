@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>ShoppingStyle</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylish.css">
+
+  </head>
+  <body>
+  <div>
+
+ <ul class="topnav" id="myTopnav">
+  <li><a href="final.html">Home</a></li>
+  <li><a href="https://www.ssense.com/en-us/men">Men</a></li>
+  <li><a href="https://www.ssense.com/en-us/women">Women</a></li>
+  <li><a href="contact1.html">Contact</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  </li>
+</ul>
+
+</div>
+<hr data-reactid=".0.0.6">
+<hr data-reactid=".0.0.6">
+<h2>2017 SS Collection</h2>
+<div class="row">
+  <div class="column">
+    <img src="m1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="m7.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="w5.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="w6.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+        <img src="m1.jpg" style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+        <img src="m7.jpg" style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+        <img src="w5.jpg" style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+        <img src="w6.jpg" style="width:60%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <div class="column">
+      <img class="demo" src="m1.jpg" onclick="currentSlide(1)" alt="men1">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="m7.jpg" onclick="currentSlide(2)" alt="men2">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="w5.jpg" onclick="currentSlide(3)" alt="women1">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="w6.jpg" onclick="currentSlide(4)" alt="women2">
+    </div>
+  </div>
+</div>
+    
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<hr data-reactid=".0.0.6">
+<footer>
+<div class="row">
+ <div class="col-sm-4">
+  <p>Posted by: Yonghan Guo & Calvin Xi</p>
+  </div>
+   <div class="col-sm-4">
+  <p>Contact information: <a href="mailto:dvclothing@gmail.com">dvclothing@gmail.com</a>.
+  </p>
+  </div>
+  </div>
+</footer>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
